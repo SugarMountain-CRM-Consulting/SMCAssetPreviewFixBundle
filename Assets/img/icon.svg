@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">SMC Asset Preview Fix Icon</title>
+  <desc id="desc">A funny life ring rescuing a tiny 404 preview card.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffe8a3"/>
+      <stop offset="100%" stop-color="#ffd36e"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="256" height="256" rx="34" fill="url(#bg)"/>
+
+  <rect x="46" y="44" width="126" height="156" rx="12" fill="#ffffff" stroke="#2f3a44" stroke-width="8"/>
+  <rect x="60" y="64" width="98" height="14" rx="7" fill="#e9eef2"/>
+  <rect x="60" y="88" width="66" height="10" rx="5" fill="#e9eef2"/>
+  <text x="109" y="145" text-anchor="middle" font-family="Verdana, sans-serif" font-size="30" font-weight="700" fill="#ff5b5b">404</text>
+
+  <circle cx="176" cy="170" r="50" fill="#ffffff" stroke="#2f3a44" stroke-width="8"/>
+  <circle cx="176" cy="170" r="24" fill="#ffd36e"/>
+  <path d="M176 120 A50 50 0 0 1 209 133 L194 147 A29 29 0 0 0 176 141 Z" fill="#ff6b4a"/>
+  <path d="M226 170 A50 50 0 0 1 213 202 L197 187 A29 29 0 0 0 205 170 Z" fill="#ff6b4a"/>
+  <path d="M176 220 A50 50 0 0 1 143 207 L158 192 A29 29 0 0 0 176 199 Z" fill="#ff6b4a"/>
+  <path d="M126 170 A50 50 0 0 1 139 138 L155 153 A29 29 0 0 0 147 170 Z" fill="#ff6b4a"/>
+
+  <path d="M89 173 C104 188 128 193 148 180" fill="none" stroke="#2f3a44" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="103" cy="160" r="4.5" fill="#2f3a44"/>
+  <circle cx="124" cy="160" r="4.5" fill="#2f3a44"/>
+</svg>
