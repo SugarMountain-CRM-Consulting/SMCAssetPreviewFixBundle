@@ -14,14 +14,13 @@ use Twig\Loader\FilesystemLoader;
 class TwigTemplatePathSubscriber implements EventSubscriberInterface
 {
     private bool $templatePathRegistered = false;
-    private string $pluginViewsPath;
 
     public function __construct(
         private readonly IntegrationHelper $integrationHelper,
         private readonly FilesystemLoader $filesystemLoader,
-        string $kernelProjectDir,
+        private readonly string $mauticApplicationDir,
+        private readonly string $kernelProjectDir,
     ) {
-        $this->pluginViewsPath = $kernelProjectDir.'/plugins/SMCAssetPreviewFixBundle/Resources/views';
     }
 
     public static function getSubscribedEvents(): array
@@ -47,7 +46,28 @@ class TwigTemplatePathSubscriber implements EventSubscriberInterface
             return;
         }
 
-        $this->filesystemLoader->prependPath($this->pluginViewsPath, 'MauticAsset');
+        $pluginViewsPath = $this->resolvePluginViewsPath();
+        if (null === $pluginViewsPath) {
+            return;
+        }
+
+        $this->filesystemLoader->prependPath($pluginViewsPath, 'MauticAsset');
         $this->templatePathRegistered = true;
+    }
+
+    private function resolvePluginViewsPath(): ?string
+    {
+        $candidates = [
+            $this->mauticApplicationDir.'/plugins/SMCAssetPreviewFixBundle/Resources/views',
+            $this->kernelProjectDir.'/plugins/SMCAssetPreviewFixBundle/Resources/views',
+        ];
+
+        foreach ($candidates as $candidate) {
+            if (is_dir($candidate)) {
+                return $candidate;
+            }
+        }
+
+        return null;
     }
 }

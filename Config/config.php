@@ -14,6 +14,7 @@ return [
                 'arguments' => [
                     'mautic.helper.integration',
                     'twig.loader.native_filesystem',
+                    '%mautic.application_dir%',
                     '%kernel.project_dir%',
                 ],
             ],
